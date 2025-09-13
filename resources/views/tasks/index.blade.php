@@ -23,40 +23,12 @@
 <div class="tasks-body">
     <h1>Lista de <span class="task-text">Tarefas</span></h1>
     <p><span class="tesk-p-text">Aqui você pode ver todas as suas tarefas.</span></p>
-
-    @foreach ($usertasks as $task)
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <p>{{$task->title}}</p>
-                </div>
-                <div class="card-back">
-                    @if ($task->status)
-                        <p>Essa tarefa tá ativa!</p>
-                    @else
-                        <p>Essa tarefa NÃO tá ativa!</p>
-                    @endif
-                </div>
-            </div>
-        </div>
-    @endforeach
+   <livewire:task-list/>
+    
 </div>
 
 <div class="form-task-container">
-    <form action="{{ route('task.store') }}" class="form-tasks" method="POST">
-        @csrf
-        <label for="title">Título da tarefa</label>
-        <input type="text" name="title" id="title">
-
-        <label for="description">Descrição da tarefa</label>
-        <input type="text" name="description" id="description">
-
-        <!-- From Uiverse.io by Voxybuns --> 
-        <button type="submit">
-        <span class="button_top"> Criar Tarefa </span>
-        </button>
-
-    </form>
+    <livewire:task-manager/>
 </div>
 
 </body>

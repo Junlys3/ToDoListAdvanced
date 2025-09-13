@@ -3,6 +3,7 @@
 use App\Http\Controllers\logincontroller;
 use App\Http\Controllers\taskcontroller;
 use Illuminate\Support\Facades\Route;
+use App\Livewire\TaskManager;
 
 
 route::get('/', function () {
